@@ -25,6 +25,8 @@ class AddUSerActivity : AppCompatActivity() {
         val btnAdd: Button = findViewById(R.id.btn_addUsers)
         val btnAdAndExit: Button = findViewById(R.id.btn_save_and_exit)
 
+        val btnSalir: Button = findViewById(R.id.btn_salir)
+
         btnAdd.setOnClickListener{
             if (addUser()){
                 tietFirstName.text = null
@@ -39,7 +41,7 @@ class AddUSerActivity : AppCompatActivity() {
                 finish()
             }
         }
-        btnAdAndExit.setOnClickListener { finish() }
+        btnSalir.setOnClickListener { finish() }
     }
 
         private fun addUser(): Boolean{

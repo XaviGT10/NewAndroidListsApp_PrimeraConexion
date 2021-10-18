@@ -13,7 +13,7 @@
         android:text="Add"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/tiet_lastname"
+        app:layout_constraintEnd_toEndOf="@+id/textInputLayout2"
         app:layout_constraintStart_toStartOf="@+id/textInputLayout2"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.639" />
@@ -36,10 +36,16 @@
         android:layout_width="253dp"
         android:layout_height="61dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.155"
-        tools:layout_editor_absoluteX="106dp">
+        app:layout_constraintVertical_bias="0.155">
 
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tiet_firstname"
+            android:layout_width="261dp"
+            android:layout_height="60dp"
+            android:hint="hint" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -52,23 +58,23 @@
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
         app:layout_constraintVertical_bias="0.111">
 
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tiet_lastname"
+            android:layout_width="259dp"
+            android:layout_height="60dp"
+            android:hint="hint" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/tiet_lastname"
-        android:layout_width="259dp"
-        android:layout_height="60dp"
-        android:hint="hint"
-        app:layout_constraintEnd_toEndOf="@+id/tiet_firstname"
-        app:layout_constraintStart_toStartOf="@+id/tiet_firstname"
-        tools:layout_editor_absoluteY="227dp" />
-
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/tiet_firstname"
-        android:layout_width="261dp"
-        android:layout_height="60dp"
-        android:hint="hint"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="115dp" />
+    <Button
+        android:id="@+id/btn_salir"
+        android:layout_width="256dp"
+        android:layout_height="58dp"
+        android:backgroundTint="#DC1616"
+        android:text="Salir"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btn_save_and_exit"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="@+id/btn_save_and_exit"
+        app:layout_constraintTop_toBottomOf="@+id/btn_save_and_exit"
+        app:layout_constraintVertical_bias="0.355" />
 </androidx.constraintlayout.widget.ConstraintLayout>
