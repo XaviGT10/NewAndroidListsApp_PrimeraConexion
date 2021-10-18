@@ -1,5 +1,6 @@
 package com.xgt.newandroidlistsapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -35,14 +36,8 @@ class MainActivity : AppCompatActivity() {
 
 
         btnAddUser.setOnClickListener {
-            adapter.addUser(
-                User(
-                    UUID.randomUUID().toString(),
-                    "First Name ${UUID.randomUUID().toString()}",
-                    "Last Name  ${UUID.randomUUID().toString()}",
-                    "Image: ${UUID.randomUUID().toString()}",
-                )
-            )
+            val intent = Intent(this, AddUSerActivity::class.java)
+            startActivity(intent)
         }
     }
 
