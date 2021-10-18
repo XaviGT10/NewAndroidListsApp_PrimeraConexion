@@ -77,4 +77,42 @@
         app:layout_constraintStart_toStartOf="@+id/btn_save_and_exit"
         app:layout_constraintTop_toBottomOf="@+id/btn_save_and_exit"
         app:layout_constraintVertical_bias="0.355" />
+
+    <RadioGroup
+        android:id="@+id/rg_Images"
+        android:layout_width="390dp"
+        android:layout_height="74dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/iv_imagen1"
+            android:layout_width="85dp"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/avatar" />
+
+        <RadioButton
+            android:id="@+id/rb_image1"
+            android:layout_width="92dp"
+            android:layout_height="match_parent"
+            tools:layout_conversion_absoluteHeight="74dp"
+            tools:layout_conversion_absoluteWidth="93dp"
+            tools:layout_editor_absoluteX="39dp"
+            tools:layout_editor_absoluteY="357dp" />
+
+        <RadioButton
+            android:id="@+id/rb_image2"
+            android:layout_width="97dp"
+            android:layout_height="match_parent" />
+
+        <ImageView
+            android:id="@+id/iv_imagen2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:srcCompat="@tools:sample/avatars" />
+
+    </RadioGroup>
 </androidx.constraintlayout.widget.ConstraintLayout>

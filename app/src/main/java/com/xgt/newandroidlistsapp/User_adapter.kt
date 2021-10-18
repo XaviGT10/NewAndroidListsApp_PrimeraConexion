@@ -36,7 +36,7 @@ class User_adapter(
         Glide.with(holder.avatarImage.context)
             .load("https://goo.gl/gEgYUd")
             .placeholder(R.drawable.avatar)
-            .into(holder.avatarImage);
+            .into(holder.avatarImage)
 
 //        val onClickListener: View.OnClickListener = object  : View.OnClickListener {
 //            override fun onClick(v: View?) {
