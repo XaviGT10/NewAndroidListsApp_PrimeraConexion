@@ -53,6 +53,7 @@ class AddUSerActivity : AppCompatActivity() {
             } else {
                 Toast.makeText(this, "Alguno de los campos no contiene el mínimo de caracteres requeridos (3", Toast.LENGTH_SHORT).show()
             }
+            return true
         }
     }
 
