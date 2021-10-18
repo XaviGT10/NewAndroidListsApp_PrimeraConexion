@@ -4,6 +4,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
@@ -19,10 +20,17 @@ class User_adapter(
         return UserViewHolder(view)
     }
 
+    class UserViewHolder(view: View): RecyclerView.ViewHolder(view) {
+        val tvFirstName: TextView = view.findViewById(R.id.tv_username)
+        val tvLastName: TextView = view.findViewById(R.id.tv_lastName)
+        val avatarImage: ImageView = view.findViewById(R.id.iv_Avatar)
+    }
+
     override fun onBindViewHolder(holder: UserViewHolder, position: Int) {
         val user: User = users[position]
 
-        holder.tvUsername.text = user.name
+        holder.tvFirstName.text = user.firstName
+        holder.tvLastName.text = user.lastName
 
 //        val onClickListener: View.OnClickListener = object  : View.OnClickListener {
 //            override fun onClick(v: View?) {
@@ -51,9 +59,6 @@ class User_adapter(
         notifyDataSetChanged()
     }
 
-    class UserViewHolder(view: View): RecyclerView.ViewHolder(view) {
-        val tvUsername: TextView = view.findViewById(R.id.tv_username)
-    }
 }
 
 interface UserOnclickListener {

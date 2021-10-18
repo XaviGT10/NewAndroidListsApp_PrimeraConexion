@@ -1,9 +1,9 @@
 package com.xgt.newandroidlistsapp
 
 data class User(
-    val id: Int,
-    val name: String,
-    val password: String? = "foco",
+    val id: String,
+    val firstName: String,
+    val lastName: String,
     val imageUrl: String? = null
 ){
 
