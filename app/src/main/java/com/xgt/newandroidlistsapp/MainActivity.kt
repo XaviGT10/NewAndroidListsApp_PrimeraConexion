@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun retriveUsers(): MutableList<String> {
-        return List(5) { index -> "Users from MAinActivity $index" }.toMutableList()
+    private fun retriveUsers(): MutableList<User> {
+        return List(5) { index -> User(id=index, name="name $index")}.toMutableList()
     }
 }

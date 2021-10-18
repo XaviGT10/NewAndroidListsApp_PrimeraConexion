@@ -8,8 +8,8 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 class User_adapter(
-    private val users: MutableList<String>,
-    val onclickListener: (String) -> Unit
+    private val users: MutableList<User>,
+    val onclickListener: (User) -> Unit
 ) :
     RecyclerView.Adapter<User_adapter.UserViewHolder>() {
 
@@ -20,9 +20,9 @@ class User_adapter(
     }
 
     override fun onBindViewHolder(holder: UserViewHolder, position: Int) {
-        val username = users[position]
+        val user: User = users[position]
 
-        holder.tvUsername.text = username
+        holder.tvUsername.text = user.name
 
 //        val onClickListener: View.OnClickListener = object  : View.OnClickListener {
 //            override fun onClick(v: View?) {
@@ -33,7 +33,7 @@ class User_adapter(
 //        holder.itemView.setOnClickListener(onClickListener)
 
         holder.itemView.setOnClickListener {
-            onclickListener(username)
+            onclickListener(user)
         }
     }
 
@@ -41,12 +41,12 @@ class User_adapter(
         return users.size
     }
 
-    fun addUser(user: String){
+    fun addUser(user: User){
         users.add(user)
         notifyItemInserted(users.size)
     }
 
-    fun Usedeleter(user: String){
+    fun Usedeleter(user: User){
         users.remove(user)
         notifyDataSetChanged()
     }
