@@ -34,13 +34,13 @@ class MainActivity : AppCompatActivity() {
         rvUser.layoutManager = layoutManager
 
 
-        btnAddUser.setOnClickListener{
+        btnAddUser.setOnClickListener {
             adapter.addUser(
                 User(
                     UUID.randomUUID().toString(),
-                    "firstName $(UUID.randomUUID().toString())",
-                    "lastName $(UUID.randomUUID().toString())",
-                    "Image $(UUID.randomUUID().toString())"
+                    "First Name ${UUID.randomUUID().toString()}",
+                    "Last Name  ${UUID.randomUUID().toString()}",
+                    "Image: ${UUID.randomUUID().toString()}",
                 )
             )
         }
