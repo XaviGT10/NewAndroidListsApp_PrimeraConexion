@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 
 class User_adapter(
     private val users: MutableList<User>,
@@ -31,6 +32,11 @@ class User_adapter(
 
         holder.tvFirstName.text = user.firstName
         holder.tvLastName.text = user.lastName
+
+        Glide.with(holder.avatarImage.context)
+            .load("https://goo.gl/gEgYUd")
+            .placeholder(R.drawable.avatar)
+            .into(holder.avatarImage);
 
 //        val onClickListener: View.OnClickListener = object  : View.OnClickListener {
 //            override fun onClick(v: View?) {

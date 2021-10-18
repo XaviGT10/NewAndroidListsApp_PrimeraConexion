@@ -51,7 +51,7 @@ class AddUSerActivity : AppCompatActivity() {
                 (application as App).users.add(newUser)
                 return true
             } else {
-                Toast.makeText(it.context, "Alguno de los campos no contiene el mínimo de caracteres requeridos (3", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Alguno de los campos no contiene el mínimo de caracteres requeridos (3", Toast.LENGTH_SHORT).show()
             }
         }
     }
