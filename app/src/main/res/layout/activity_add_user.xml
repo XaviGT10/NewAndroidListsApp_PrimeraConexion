@@ -8,38 +8,67 @@
 
     <Button
         android:id="@+id/btn_addUsers"
-        android:layout_width="124dp"
+        android:layout_width="0dp"
         android:layout_height="65dp"
         android:text="Add"
+        android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/tiet_lastname"
+        app:layout_constraintStart_toStartOf="@+id/textInputLayout2"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.639" />
 
-    <EditText
-        android:id="@+id/et_Nombre2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name"
-        app:layout_constraintBottom_toTopOf="@+id/et_Usr"
+    <Button
+        android:id="@+id/btn_save_and_exit"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        android:text="Save and exit"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btn_addUsers"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="@+id/btn_addUsers"
+        app:layout_constraintTop_toBottomOf="@+id/btn_addUsers"
+        app:layout_constraintVertical_bias="0.178" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
+        android:layout_width="253dp"
+        android:layout_height="61dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.155"
+        tools:layout_editor_absoluteX="106dp">
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout2"
+        android:layout_width="257dp"
+        android:layout_height="56dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.705" />
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
+        app:layout_constraintVertical_bias="0.111">
 
-    <EditText
-        android:id="@+id/et_Usr"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="68dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name"
-        app:layout_constraintBottom_toTopOf="@+id/btn_addUsers"
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/tiet_lastname"
+        android:layout_width="259dp"
+        android:layout_height="60dp"
+        android:hint="hint"
+        app:layout_constraintEnd_toEndOf="@+id/tiet_firstname"
+        app:layout_constraintStart_toStartOf="@+id/tiet_firstname"
+        tools:layout_editor_absoluteY="227dp" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/tiet_firstname"
+        android:layout_width="261dp"
+        android:layout_height="60dp"
+        android:hint="hint"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="115dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
