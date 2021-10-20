@@ -21,10 +21,6 @@ class MainActivity : AppCompatActivity() {
         val btnAddUser: Button = findViewById(R.id.btn_addUser)
         val namePassed: String? = intent.extras?.getString("name")
         val lastNamePassed: String? = intent.extras?.getString("last_name")
-        val tvFirstName: TextView = findViewById(R.id.tv_username)
-        val tvLastName: TextView = findViewById(R.id.tv_lastName)
-        tvFirstName.text = namePassed
-        tvLastName.text = lastNamePassed
         val userOnclickListener = object : UserOnclickListener{
             override fun onClick(user: String) {
                 Log.d("MainActivity", "User clicked from main activity: $user")
@@ -35,7 +31,9 @@ class MainActivity : AppCompatActivity() {
         val users = app.users
 
 
-        val adapter = User_adapter(users) {user ->
+        adapter = User_adapter(users) {user ->
+            val intent = Intent(this, NewDetailActivity::class.java)
+            intent.putExtra("userId", user.id)
             Log.d("MainActivity", "User clicked from main activity: $user")
         }
         rvUser.adapter = adapter
