@@ -62,7 +62,7 @@
             android:id="@+id/tiet_lastname"
             android:layout_width="259dp"
             android:layout_height="60dp"
-            android:hint="hint" />
+            android:hint="Name" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
