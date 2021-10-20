@@ -13,23 +13,23 @@ import java.util.*
 class AddUSerActivity : AppCompatActivity() {
     private lateinit var tietFirstName: TextInputEditText
     private lateinit var tietLastName: TextInputEditText
-    private lateinit var
-    private lateinit var
-    private lateinit var
+    private lateinit var rgImages: RadioGroup
+    private lateinit var rbImage1: RadioButton
+    private lateinit var rbImage2: RadioButton
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_user)
 
-        val tietFirstName: TextInputEditText = findViewById(R.id.tiet_firstname)
-        val tietLastName: TextInputEditText = findViewById(R.id.tiet_lastname)
+        tietFirstName = findViewById(R.id.tiet_firstname)
+        tietLastName = findViewById(R.id.tiet_lastname)
 
         val btnAdd: Button = findViewById(R.id.btn_addUsers)
         val btnAdAndExit: Button = findViewById(R.id.btn_save_and_exit)
         val btnSalir: Button = findViewById(R.id.btn_salir)
 
-        val rgImages: RadioGroup = findViewById(R.id.rg_Images)
-        val rbImage1: RadioButton = findViewById(R.id.rb_image1)
-        val rbImage2: RadioButton = findViewById(R.id.rb_image2)
+        rgImages = findViewById(R.id.rg_Images)
+        rbImage1 = findViewById(R.id.rb_image1)
+        rbImage2 = findViewById(R.id.rb_image2)
 
         val ivImage1: ImageView = findViewById(R.id.iv_imagen1)
         val ivImage2: ImageView = findViewById(R.id.iv_imagen2)
@@ -40,8 +40,6 @@ class AddUSerActivity : AppCompatActivity() {
         Glide.with(this)
             .load("i.imgur.com/DvpvklR.png")
             .into(ivImage2)
-
-
 
         btnAdd.setOnClickListener{
             if (addUser()){
