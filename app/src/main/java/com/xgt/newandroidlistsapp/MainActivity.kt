@@ -9,6 +9,9 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.amarinag.demon02_recyclerview.FakeData
+import com.google.gson.Gson
+import org.json.JSONObject
 import java.util.*
 
 class MainActivity : AppCompatActivity() {
@@ -30,6 +33,8 @@ class MainActivity : AppCompatActivity() {
         val app = (application as App)
         val users = app.users
 
+        val gson: Gson =  Gson()
+        gson.fromJson(FakeData.usersJson, ResultResponse::class.java)
 
         adapter = User_adapter(users) {user ->
             val intent = Intent(this, NewDetailActivity::class.java)

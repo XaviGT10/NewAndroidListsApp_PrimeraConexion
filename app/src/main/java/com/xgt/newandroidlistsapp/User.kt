@@ -5,7 +5,4 @@ data class User(
     val firstName: String,
     val lastName: String,
     val imageUrl: String? = null
-){
-
-fun checkValueUser(): Boolean = true
-}
+)
