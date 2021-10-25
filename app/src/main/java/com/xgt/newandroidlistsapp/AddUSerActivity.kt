@@ -35,10 +35,10 @@ class AddUSerActivity : AppCompatActivity() {
         val ivImage2: ImageView = findViewById(R.id.iv_imagen2)
 
         Glide.with(this)
-            .load("upload.wikimedia.org/wikipedia/commons/3/30/Chuck_Norris_May_2015.jpg")
+            .load("https://upload.wikimedia.org/wikipedia/commons/3/30/Chuck_Norris_May_2015.jpg")
             .into(ivImage1)
         Glide.with(this)
-            .load("i.imgur.com/DvpvklR.png")
+            .load("https://i.imgur.com/DvpvklR.png")
             .into(ivImage2)
 
         btnAdd.setOnClickListener{
