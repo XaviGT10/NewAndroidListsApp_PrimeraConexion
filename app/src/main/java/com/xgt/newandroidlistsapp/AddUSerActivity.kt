@@ -34,12 +34,8 @@ class AddUSerActivity : AppCompatActivity() {
         val ivImage1: ImageView = findViewById(R.id.iv_imagen1)
         val ivImage2: ImageView = findViewById(R.id.iv_imagen2)
 
-        Glide.with(this)
-            .load("https://upload.wikimedia.org/wikipedia/commons/3/30/Chuck_Norris_May_2015.jpg")
-            .into(ivImage1)
-        Glide.with(this)
-            .load("https://i.imgur.com/DvpvklR.png")
-            .into(ivImage2)
+        ivImage1.imageFromUrl("https://upload.wikimedia.org/wikipedia/commons/3/30/Chuck_Norris_May_2015.jpg")
+        ivImage2.imageFromUrl("https://i.imgur.com/DvpvklR.png", R.drawable.avatar)
 
         btnAdd.setOnClickListener{
             if (addUser()){

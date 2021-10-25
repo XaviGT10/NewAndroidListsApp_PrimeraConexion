@@ -34,7 +34,12 @@ class MainActivity : AppCompatActivity() {
         val users = app.users
 
         val gson: Gson =  Gson()
-        gson.fromJson(FakeData.usersJson, ResultResponse::class.java)
+        val results = gson.fromJson(FakeData.usersJson, ResultResponse::class.java)
+
+        users.addAll(results.users.toUser())
+        results.users.forEach { userResponse ->
+            users.add(userResponse.toUser())
+        }
 
         adapter = User_adapter(users) {user ->
             val intent = Intent(this, NewDetailActivity::class.java)

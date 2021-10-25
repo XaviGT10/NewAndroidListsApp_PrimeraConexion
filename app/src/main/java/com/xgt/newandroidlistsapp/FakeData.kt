@@ -1,5 +1,8 @@
 package com.amarinag.demon02_recyclerview
 
+import com.xgt.newandroidlistsapp.User
+import com.xgt.newandroidlistsapp.UserResponse
+
 object FakeData {
 
     val usersJson: String =
