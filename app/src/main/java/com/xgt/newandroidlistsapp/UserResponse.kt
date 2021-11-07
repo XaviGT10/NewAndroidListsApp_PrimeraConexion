@@ -11,16 +11,18 @@ data class UserResponse (
     val email: String,
     val name: FullNameResponse,
     val picture: PictureResponse
-)
+){
+
+}
 
 data class FullNameResponse(
-    val title: String,
-    val first: String,
-    val last: String
+    @SerializedName("title") val title: String,
+    @SerializedName("first") val first: String,
+    @SerializedName("last") val last: String
 )
 
 data class PictureResponse(
-    val large: String,
-    val medium: String,
-    val thumbail: String
+    @SerializedName("large") val large: String,
+    @SerializedName("medium") val medium: String,
+    @SerializedName("thumbail") val thumbail: String
 )

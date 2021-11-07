@@ -17,6 +17,7 @@ class NewDetailActivity : AppCompatActivity()  {
         val userId: String? = intent.extras?.getString("userId")
         if (userId == null){
             //Show user that some error has taken place
+            Log.d("Detail", "User id is null")
             finish()
         }
 
@@ -29,7 +30,7 @@ class NewDetailActivity : AppCompatActivity()  {
 
 //        }
 
-        val user = (application as App).users.firstOrNull { forUser -> forUser.id == userId }
+        val user: User? = (application as App).users.firstOrNull { forUser -> forUser.id == userId }
 
         if (user == null){
             //Show user that some error has taken place

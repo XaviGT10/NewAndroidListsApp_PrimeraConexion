@@ -21,12 +21,6 @@ class User_adapter(
         return UserViewHolder(view)
     }
 
-    class UserViewHolder(view: View): RecyclerView.ViewHolder(view) {
-        val tvFirstName: TextView = view.findViewById(R.id.tv_username)
-        val tvLastName: TextView = view.findViewById(R.id.tv_lastName)
-        val avatarImage: ImageView = view.findViewById(R.id.iv_Avatar)
-    }
-
     override fun onBindViewHolder(holder: UserViewHolder, position: Int) {
         val user: User = users[position]
 
@@ -36,19 +30,17 @@ class User_adapter(
         Glide.with(holder.avatarImage.context)
             .load("https://goo.gl/gEgYUd")
             .placeholder(R.drawable.avatar)
+            .error(R.drawable.error)
             .into(holder.avatarImage)
 
-//        val onClickListener: View.OnClickListener = object  : View.OnClickListener {
-//            override fun onClick(v: View?) {
-//                onclickListener(username)
-//            }
-//        }
-
-//        holder.itemView.setOnClickListener(onClickListener)
-
-        holder.itemView.setOnClickListener {
-            onclickListener(user)
+        val onClickListener: View.OnClickListener = object  : View.OnClickListener {
+            override fun onClick(v: View?) {
+                onclickListener(user)
+            }
         }
+
+        holder.tvFirstName.text = user.firstName
+        holder.itemView.setOnClickListener(onClickListener)
     }
 
     override fun getItemCount(): Int {
@@ -65,8 +57,14 @@ class User_adapter(
         notifyDataSetChanged()
     }
 
+    class UserViewHolder(view: View): RecyclerView.ViewHolder(view) {
+        val tvFirstName: TextView = view.findViewById(R.id.tv_username)
+        val tvLastName: TextView = view.findViewById(R.id.tv_lastName)
+        val avatarImage: ImageView = view.findViewById(R.id.iv_Avatar)
+    }
+
 }
 
 interface UserOnclickListener {
-    fun onClick (user: String)
+    fun onClick (user: User)
 }
