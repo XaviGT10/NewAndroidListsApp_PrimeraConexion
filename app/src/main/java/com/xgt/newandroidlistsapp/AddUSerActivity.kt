@@ -16,6 +16,7 @@ class AddUSerActivity : AppCompatActivity() {
     private lateinit var rgImages: RadioGroup
     private lateinit var rbImage1: RadioButton
     private lateinit var rbImage2: RadioButton
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_user)
@@ -34,8 +35,8 @@ class AddUSerActivity : AppCompatActivity() {
         val ivImage1: ImageView = findViewById(R.id.iv_imagen1)
         val ivImage2: ImageView = findViewById(R.id.iv_imagen2)
 
-        ivImage1.imageFromUrl("https://upload.wikimedia.org/wikipedia/commons/3/30/Chuck_Norris_May_2015.jpg")
-        ivImage2.imageFromUrl("https://i.imgur.com/DvpvklR.png", R.drawable.avatar)
+        ivImage1.imageFromUrl("https://i.imgur.com/DvpvklR.png", R.drawable.avatar)
+        ivImage2.imageFromUrl("https://upload.wikimedia.org/wikipedia/commons/3/30/Chuck_Norris_May_2015.jpg")
 
         btnAdd.setOnClickListener{
             if (addUser()){
@@ -43,8 +44,6 @@ class AddUSerActivity : AppCompatActivity() {
                 tietLastName.text = null
                 tietFirstName.requestFocus()
             }
-
-
         }
         btnAdAndExit.setOnClickListener{
             if (addUser()){
@@ -57,7 +56,13 @@ class AddUSerActivity : AppCompatActivity() {
         private fun addUser(): Boolean{
             val firstName = tietFirstName.text.toString()
             val lastName = tietLastName.text.toString()
-            val imageURL: String? = null
+            var imageURL: String? = null
+
+            if (rbImage1.isChecked){
+                imageURL = "https://i.imgur.com/DvpvklR.png"
+            } else {
+                imageURL = "https://upload.wikimedia.org/wikipedia/commons/3/30/Chuck_Norris_May_2015.jpg"
+            }
 
 
             if (firstName.length > 3 && lastName.length > 3) {
@@ -66,8 +71,7 @@ class AddUSerActivity : AppCompatActivity() {
                 return true
             } else {
                 Toast.makeText(this, "Alguno de los campos no contiene el mínimo de caracteres requeridos (3", Toast.LENGTH_SHORT).show()
+                return false
             }
-            return true
         }
     }
-
